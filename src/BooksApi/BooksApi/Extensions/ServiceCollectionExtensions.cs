@@ -16,11 +16,11 @@ public static class ServiceCollectionExtensions
 
         return services
             .AddCommonServices(configuration)
-            .AddGraphQL(configuration)
+            .AddGraphQl(configuration)
             .AddMongo(configuration);
     }
 
-    private static IServiceCollection AddGraphQL(this IServiceCollection services,
+    private static IServiceCollection AddGraphQl(this IServiceCollection services,
         IConfiguration configuration)
     {
         services.AddGraphQLServer()
@@ -33,7 +33,6 @@ public static class ServiceCollectionExtensions
         IConfiguration configuration)
     {
         return services
-            .AddTransient<IBookRepository, BookRepository>()
             .AddLogging(builder => builder.AddConsole())
             .AddHttpContextAccessor();
     }
